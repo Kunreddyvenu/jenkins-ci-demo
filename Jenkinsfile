@@ -23,7 +23,12 @@ pipeline {
                 sh 'echo "Running test suite..."'
             }
         }
-
+       stage('code changes') {
+            steps {
+                echo 'checking webhook...'
+                sh 'echo "webhook is running..."'
+            }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'

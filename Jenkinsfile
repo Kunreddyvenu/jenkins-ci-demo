@@ -31,7 +31,7 @@ pipeline {
 
     post {
         success {
-            echo 'Infrastructure created successfully!'
+            echo 'ec2 instance created successfully!'
         }
         failure {
             echo 'Pipeline failed!'

@@ -7,6 +7,6 @@ resource "aws_instance" "devops-practice-server" {
   instance_type = "t3.micro"
 
   tags = {
-    Name = "jenkins-terraform-practice"
+    Name = "my first ec2 instance"
   }
 }

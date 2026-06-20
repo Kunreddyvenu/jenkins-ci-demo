@@ -34,7 +34,7 @@ pipeline {
             echo 'ec2 instance created successfully!'
         }
         failure {
-            echo 'Pipeline failed!'
+            echo 'Pipeline config need to check again'
         }
     }
 }

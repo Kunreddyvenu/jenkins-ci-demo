@@ -10,36 +10,28 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Terraform Init') {
             steps {
-                echo 'Building the application...'
-                sh 'echo "Build started at $(date)"'
+                sh 'terraform init'
             }
         }
 
-        stage('Test') {
+        stage('Terraform Plan') {
             steps {
-                echo 'Running tests...'
-                sh 'echo "Running test suite..."'
+                sh 'terraform plan'
             }
         }
-       stage('code changes') {
+
+        stage('Terraform Apply') {
             steps {
-                echo 'checking webhook...'
-                sh 'echo "webhook is running..."'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the application...'
-                sh 'echo "Deployment complete"'
+                sh 'terraform apply -auto-approve'
             }
         }
     }
 
     post {
         success {
-            echo 'Pipeline completed successfully!'
+            echo 'Infrastructure created successfully!'
         }
         failure {
             echo 'Pipeline failed!'

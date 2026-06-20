@@ -15,12 +15,6 @@ pipeline {
                 sh 'terraform init'
             }
         }
-
-        stage('Terraform Plan') {
-            steps {
-                sh 'terraform plan'
-            }
-        }
     
     }
 
@@ -29,7 +23,7 @@ pipeline {
             echo 'ec2 instance created successfully!'
         }
         failure {
-            echo 'Pipeline config need to check again'
+            echo 'Pipeline failured'
         }
     }
 }

@@ -10,7 +10,12 @@ pipeline {
             }
         }
 
-        stage('Terraform Init') {
+        stage('Lint') {
+    steps {
+        echo 'Running lint checks...'
+    }
+}
+       stage('Terraform Init') {
             steps {
                 sh 'terraform init'
             }

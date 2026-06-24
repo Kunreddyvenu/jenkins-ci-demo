@@ -15,7 +15,16 @@ pipeline {
         echo 'Running lint checks...'
     }
 }
-       stage('Terraform Init') {
+       stage('Testbuild ') {
+        steps { 
+            echo 'this is build stage'
+            sh 'ls -la'
+            sh 'pwd' 
+
+        }
+       }
+
+     stage('Terraform Init') {
             steps {
                 sh 'terraform init'
             }

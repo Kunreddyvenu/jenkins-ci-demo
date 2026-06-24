@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('Cleanup') {
+    steps {
+        sh 'rm -rf .terraform'
+    }
+}
         stage('Checkout') {
             steps {
                 echo 'Code already checked out by Jenkins'
